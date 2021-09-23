@@ -1,46 +1,44 @@
 // import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Icon } from '@material-ui/core'
-import Avatar from '@mui/material/Avatar';
-
-
+import { makeStyles } from "@material-ui/core/styles";
+import { Typography, Avatar } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   comment: {
-    color: 'red', 
-    display: "flex",
+    color: "blue",
+    display: "block",
     alignItems: "center",
-    paddingTop: theme.spacing(1),
-    paddingLeft: theme.spacing(4),
-    paddingRight: theme.spacing(4),
-    paddingBottom: theme.spacing(1),
+    marginTop: theme.spacing(1),
+    marginLeft: theme.spacing(4),
+    marginRight: theme.spacing(4),
+    marginBottom: theme.spacing(1),
   },
   userInfo: {
-      color: 'blue', 
-      display: 'flex',
-      alignItems: 'center',
-      margin: theme.spacing(1)
+    color: "blue",
+    display: "block",
+    alignItems: "center",
+    margin: theme.spacing(1),
   },
   userInfoName: {
-    color: 'yellow',
-    display: 'flex',
-    alignItems: 'center',
-    margin: theme.spacing(1)
+    color: "black",
+    display: "block",
+    alignItems: "center",
+    margin: theme.spacing(1),
   },
   Avatar: {
     height: 50,
     width: 50,
   },
   commentText: {
-    display: 'flex',
-    alignItems: 'center',
-    margin: theme.spacing(1)
-  },  
+    display: "block",
+    alignItems: "center",
+    margin: theme.spacing(1),
+  },
   commentDate: {
-    display: 'flex',
-    alignItems: 'center',
-    margin: theme.spacing(1)
-  }
+    color: "green",
+    display: "block",
+    alignItems: "center",
+    margin: theme.spacing(1),
+  },
 }));
 
 function formatDate(date) {
@@ -51,9 +49,8 @@ export function Comment(props) {
   const classes = useStyles();
   return (
     <Typography className={classes.comment}>
-      <Typography className={classes.userInfo}>
-        <Avatar 
-          alt="Hello Ketty"
+      <Typography display="block" className={classes.userInfo}>
+        <Avatar
           className={classes.Avatar}
           src={props.author.avatarUrl}
           alt={props.author.name}
@@ -69,4 +66,3 @@ export function Comment(props) {
     </Typography>
   );
 }
-
