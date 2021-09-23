@@ -1,15 +1,25 @@
-// const name = "Gaello Armelito";
 // const element = <h1>Hello, {name}</h1>;
-import { FormatName } from "./components/FormatName";
+import { Comment } from "./components/Comment";
 
-const user = {
-  firstName: "Benji",
-  lastName: "Spencer",
+const comment = {
+  date: new Date(),
+  text: "I hope you enjoy learning React!",
+  author: {
+    name: "Hello Kitty",
+    avatarUrl: "http://placekitten.com/200/300?image=11",
+  },
 };
-const element = <h1>Hello, {FormatName(user)}!</h1>;
-
-function App() {
-  return <div className="App">{element}</div>;
+function App(props) {
+  return (
+    <div className="App">
+      <Comment
+        date={comment.date}
+        text={comment.text}
+        author={comment.author}
+      />
+      ,
+    </div>
+  );
 }
 
 export default App;
