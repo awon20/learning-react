@@ -25,6 +25,7 @@ function App(props) {
       direction="column"
       alignItems="center"
       justify="center"
+      style={{ minHeight: "100vh" }}
       className={classes.root}
     >
       <Comment
