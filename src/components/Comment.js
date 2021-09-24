@@ -1,8 +1,11 @@
 // import clsx from 'clsx';
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Avatar } from "@material-ui/core";
+import { Typography, Avatar, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    alignContent: "center",
+  },
   comment: {
     color: "blue",
     display: "block",
@@ -48,21 +51,31 @@ function formatDate(date) {
 export function Comment(props) {
   const classes = useStyles();
   return (
-    <Typography className={classes.comment}>
-      <Typography display="block" className={classes.userInfo}>
-        <Avatar
-          className={classes.Avatar}
-          src={props.author.avatarUrl}
-          alt={props.author.name}
-        />
-        <Typography className={classes.userInfoName}>
-          {props.author.name}
+    <Grid
+      container
+      spacing={2}
+      direction="column"
+      alignItems="center"
+      justify="center"
+      style={{ minHeight: "100vh" }}
+      className={classes.root}
+    >
+      <Typography className={classes.comment}>
+        <Typography display="block" className={classes.userInfo}>
+          <Avatar
+            className={classes.Avatar}
+            src={props.author.avatarUrl}
+            alt={props.author.name}
+          />
+          <Typography className={classes.userInfoName}>
+            {props.author.name}
+          </Typography>
+        </Typography>
+        <Typography className={classes.commentText}>{props.text}</Typography>
+        <Typography className={classes.commentDate}>
+          {formatDate(props.date)}
         </Typography>
       </Typography>
-      <Typography className={classes.commentText}>{props.text}</Typography>
-      <Typography className={classes.commentDate}>
-        {formatDate(props.date)}
-      </Typography>
-    </Typography>
+    </Grid>
   );
 }
