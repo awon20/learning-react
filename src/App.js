@@ -1,12 +1,7 @@
 // const element = <h1>Hello, {name}</h1>;
 import { Comment } from "./components/Comment";
-import { makeStyles, Grid } from "@material-ui/core";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    alignContent: "center",
-  },
-}));
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
 
 const comment = {
   date: new Date(),
@@ -17,23 +12,16 @@ const comment = {
   },
 };
 function App(props) {
-  const classes = useStyles();
   return (
-    <Grid
-      container
-      spacing={2}
-      direction="column"
-      alignItems="center"
-      justify="center"
-      style={{ minHeight: "100vh" }}
-      className={classes.root}
-    >
-      <Comment
-        date={comment.date}
-        text={comment.text}
-        author={comment.author}
-      />
-    </Grid>
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container item xs="auto">
+        <Comment
+          date={comment.date}
+          text={comment.text}
+          author={comment.author}
+        />
+      </Grid>
+    </Box>
   );
 }
 
