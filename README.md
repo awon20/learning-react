@@ -1,3 +1,56 @@
+# Learning React
+
+Kleine React-Lernanwendung zum Aufbau und zur Zusammensetzung wiederverwendbarer Komponenten.
+
+## Umfang
+
+- Kommentaransicht mit Autor, Avatar, Datum und Text
+- Übergabe von Daten über Props
+- Layout mit Material UI
+
+## Wartungsstand
+
+Die Sicherheits- und Abhängigkeitsänderungen werden in [PR #1](https://github.com/awon20/learning-react/pull/1) verfolgt. Sie sind noch nicht in den Quellcode-Hauptbranch übernommen. Die README-Ergänzung führt diesen Pull Request nicht zusammen.
+
+## Lokal starten
+
+Die folgenden Befehle verwenden ausdrücklich den vorbereiteten Wartungsbranch. Dessen Änderungen sind noch in Prüfung; offene Paketwarnungen stehen im zugehörigen PR. Der bisherige Hauptbranch verwendet teilweise ältere Build-Werkzeuge und kann mit neueren Node-Versionen fehlschlagen.
+
+Voraussetzungen: Git, Node.js und npm. Die lokalen Web-Builds des Wartungsstands wurden mit Node.js 24.19.0 und npm 11.21.0 geprüft. Ein erfolgreicher Build bedeutet keine vollständige Behebung aller Paketwarnungen.
+
+```sh
+git clone --branch codex/security-maintenance-2026-10-13 https://github.com/awon20/learning-react.git
+cd learning-react
+npm ci --ignore-scripts
+npm start
+```
+
+Die vom Entwicklungsserver ausgegebene lokale Adresse öffnen. Zum Beenden im Terminal `Ctrl+C` drücken.
+
+## Build und Prüfungen
+
+```sh
+npm run build
+npm audit
+```
+
+Der statische Web-Build liegt in `build/`. `npm test` startet den konfigurierten Test-Runner; die Existenz des Skripts allein belegt keine vollständige Testabdeckung.
+
+## Projektstruktur
+
+- [`src/App.js`](https://github.com/awon20/learning-react/blob/main/src/App.js)
+- [`src/components`](https://github.com/awon20/learning-react/tree/main/src/components)
+- [`public`](https://github.com/awon20/learning-react/tree/main/public)
+
+## Beiträge
+
+Änderungen mit einer kurzen Beschreibung und passenden Prüfergebnissen als Pull Request einreichen. Keine Zugangsdaten, privaten Schlüssel oder lokalen Abhängigkeitsordner hinzufügen.
+
+<details>
+<summary>Bisherige Projektnotizen (historischer Stand)</summary>
+
+Die folgenden Hinweise bleiben als ursprüngliche Dokumentation erhalten. Für den aktuellen Wartungsstand gelten die Angaben oben.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +121,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+</details>
